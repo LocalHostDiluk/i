@@ -23,7 +23,7 @@ const AIEstimatorSection: React.FC = () => {
 
   const fetchAIResponse = async (userPrompt: string): Promise<string> => {
     try {
-      const response = await axios.post("http://localhost:4000/api/auth/chat-gemini", {
+      const response = await axios.post("https://jardineria-ornamental-backend-web-page-production.up.railway.app/api/auth/chat-gemini", {
         prompt: userPrompt,
       });
 
