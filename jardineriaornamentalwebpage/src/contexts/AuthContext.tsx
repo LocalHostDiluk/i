@@ -44,7 +44,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
       }
 
       try {
-        const response = await fetch("http://localhost:4000/api/auth/verify", {
+        const response = await fetch("https://jardineria-ornamental-backend-web-page-production.up.railway.app/api/auth/verify", {
           headers: { Authorization: `Bearer ${token}` },
         });
 
@@ -67,7 +67,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
 
   const login = async (email: string, password: string): Promise<boolean> => {
     try {
-      const response = await fetch("http://localhost:4000/api/auth/login", {
+      const response = await fetch("https://jardineria-ornamental-backend-web-page-production.up.railway.app/api/auth/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, password }),
@@ -100,7 +100,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
     if (!token || !user) return;
 
     try {
-      const response = await fetch("http://localhost:4000/api/auth/profile", {
+      const response = await fetch("https://jardineria-ornamental-backend-web-page-production.up.railway.app/api/auth/profile", {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
