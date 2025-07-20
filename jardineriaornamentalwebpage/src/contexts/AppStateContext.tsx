@@ -94,7 +94,7 @@ const useAppStore = create<AppState>((set, get) => ({
   // Servicios
   loadServices: async () => {
     try {
-      const res = await fetch("http://localhost:4000/api/services");
+      const res = await fetch("https://jardineria-ornamental-backend-web-page-production.up.railway.app/api/services");
       if (!res.ok) throw new Error("Error al cargar servicios");
 
       const data: Service[] = await res.json();
@@ -109,7 +109,7 @@ const useAppStore = create<AppState>((set, get) => ({
       const token = localStorage.getItem("token");
       if (!token) throw new Error("No hay token disponible");
 
-      const res = await fetch(`http://localhost:4000/api/services/${id}`, {
+      const res = await fetch(`https://jardineria-ornamental-backend-web-page-production.up.railway.app/api/services/${id}`, {
         method: "DELETE",
         headers: { Authorization: `Bearer ${token}` },
       });
@@ -129,7 +129,7 @@ const useAppStore = create<AppState>((set, get) => ({
       const token = localStorage.getItem("token");
       if (!token) throw new Error("No hay token disponible");
 
-      const res = await fetch("http://localhost:4000/api/services", {
+      const res = await fetch("https://jardineria-ornamental-backend-web-page-production.up.railway.app/api/services", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -153,7 +153,7 @@ const useAppStore = create<AppState>((set, get) => ({
       const token = localStorage.getItem("token");
       if (!token) throw new Error("No hay token disponible");
 
-      const res = await fetch(`http://localhost:4000/api/services/${id}`, {
+      const res = await fetch(`https://jardineria-ornamental-backend-web-page-production.up.railway.app/api/services/${id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -182,7 +182,7 @@ const useAppStore = create<AppState>((set, get) => ({
       if (!token) throw new Error("No hay token disponible");
 
       const res = await fetch(
-        `http://localhost:4000/api/services/${id}/estado`,
+        `https://jardineria-ornamental-backend-web-page-production.up.railway.app/api/services/${id}/estado`,
         {
           method: "PATCH",
           headers: { Authorization: `Bearer ${token}` },
@@ -213,7 +213,7 @@ const useAppStore = create<AppState>((set, get) => ({
     message: string;
   }) => {
     try {
-      const response = await fetch(`http://localhost:4000/api/appointments`, {
+      const response = await fetch(`https://jardineria-ornamental-backend-web-page-production.up.railway.app/api/appointments`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(appointment),
@@ -235,7 +235,7 @@ const useAppStore = create<AppState>((set, get) => ({
       const token = localStorage.getItem("token");
       if (!token) throw new Error("No hay token disponible");
 
-      const res = await fetch("http://localhost:4000/api/appointments", {
+      const res = await fetch("https://jardineria-ornamental-backend-web-page-production.up.railway.app/api/appointments", {
         headers: { Authorization: `Bearer ${token}` },
       });
 
@@ -257,7 +257,7 @@ const useAppStore = create<AppState>((set, get) => ({
       const token = localStorage.getItem("token");
       if (!token) throw new Error("No hay token disponible");
 
-      const res = await fetch(`http://localhost:4000/api/appointments/${id}`, {
+      const res = await fetch(`https://jardineria-ornamental-backend-web-page-production.up.railway.app/api/appointments/${id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -285,7 +285,7 @@ const useAppStore = create<AppState>((set, get) => ({
       const token = localStorage.getItem("token");
       if (!token) throw new Error("No hay token disponible");
 
-      const res = await fetch(`http://localhost:4000/api/appointments/${id}`, {
+      const res = await fetch(`https://jardineria-ornamental-backend-web-page-production.up.railway.app/api/appointments/${id}`, {
         method: "DELETE",
         headers: { Authorization: `Bearer ${token}` },
       });
@@ -305,7 +305,7 @@ const useAppStore = create<AppState>((set, get) => ({
   //Contenido
   loadContent: async () => {
     try {
-      const res = await fetch("http://localhost:4000/api/content");
+      const res = await fetch("https://jardineria-ornamental-backend-web-page-production.up.railway.app/api/content");
       if (!res.ok) throw new Error("Error al cargar contenido");
       const data: Content[] = await res.json();
       set({ content: data });
@@ -318,7 +318,7 @@ const useAppStore = create<AppState>((set, get) => ({
     try {
       const token = localStorage.getItem("token");
       if (!token) throw new Error("Token no encontrado");
-      const res = await fetch(`http://localhost:4000/api/content`, {
+      const res = await fetch(`https://jardineria-ornamental-backend-web-page-production.up.railway.app/api/content`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -338,7 +338,7 @@ const useAppStore = create<AppState>((set, get) => ({
     try {
       const token = localStorage.getItem("token");
       if (!token) throw new Error("Token no encontrado");
-      const res = await fetch(`http://localhost:4000/api/content/${id}`, {
+      const res = await fetch(`https://jardineria-ornamental-backend-web-page-production.up.railway.app/api/content/${id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -360,7 +360,7 @@ const useAppStore = create<AppState>((set, get) => ({
     try {
       const token = localStorage.getItem("token");
       if (!token) throw new Error("Token no encontrado");
-      const res = await fetch(`http://localhost:4000/api/content/${id}`, {
+      const res = await fetch(`https://jardineria-ornamental-backend-web-page-production.up.railway.app/api/content/${id}`, {
         method: "DELETE",
         headers: { Authorization: `Bearer ${token}` },
       });
@@ -376,7 +376,7 @@ const useAppStore = create<AppState>((set, get) => ({
       const token = localStorage.getItem("token");
       if (!token) throw new Error("Token no encontrado");
       const res = await fetch(
-        `http://localhost:4000/api/content/${id}/activo`,
+        `https://jardineria-ornamental-backend-web-page-production.up.railway.app/api/content/${id}/activo`,
         {
           method: "PATCH",
           headers: { Authorization: `Bearer ${token}` },
@@ -396,7 +396,7 @@ const useAppStore = create<AppState>((set, get) => ({
   loadUsers: async () => {
     try {
       const token = localStorage.getItem("token");
-      const res = await fetch("http://localhost:4000/api/auth/users", {
+      const res = await fetch("https://jardineria-ornamental-backend-web-page-production.up.railway.app/api/auth/users", {
         headers: { Authorization: `Bearer ${token}` },
       });
       if (!res.ok) throw new Error("Error al cargar usuarios");
@@ -409,7 +409,7 @@ const useAppStore = create<AppState>((set, get) => ({
 
   createUser: async (userData) => {
     try {
-      const res = await fetch("http://localhost:4000/api/auth/register", {
+      const res = await fetch("https://jardineria-ornamental-backend-web-page-production.up.railway.app/api/auth/register", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(userData),
